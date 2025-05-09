@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1746662606 source:c:\users\vrapt\documents\2025-1\ed1\hashdircerrado\main.cpp
+	<iostream>
+	"HashDC.h"
+
+1746803736 c:\users\vrapt\documents\2025-1\ed1\hashdircerrado\hashdc.h
+	"ListaSimple.h"
+	"HashDC.tpp"
+
+1746663670 c:\users\vrapt\documents\2025-1\ed1\hashdircerrado\hashdc.tpp
+	<iostream>
+	"ListaSimple.h"
+
+1741582121 c:\users\vrapt\documents\2025-1\ed1\hashdircerrado\listadoble.h
+	"ListaDoble.tpp"
+
+1741583708 c:\users\vrapt\documents\2025-1\ed1\hashdircerrado\listadoble.tpp
+	<iostream>
+
+1740418447 c:\users\vrapt\documents\2025-1\ed1\hashdircerrado\listasimple.h
+	"ListaSimple.tpp"
+
+1740417067 c:\users\vrapt\documents\2025-1\ed1\hashdircerrado\listasimple.tpp
+	<iostream>
+
