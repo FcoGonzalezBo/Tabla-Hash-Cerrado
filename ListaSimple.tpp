@@ -75,7 +75,9 @@ template <typename Tipo>
 void ListaSimple<Tipo>::EliminarPrimero()
 {
     if(EstaVacia())throw "Lista vac\241a";
+    Elemento *temp = primero;
     primero = primero ->sig;
+    delete temp;
     --numElem;
 }
 //*****************************************************************

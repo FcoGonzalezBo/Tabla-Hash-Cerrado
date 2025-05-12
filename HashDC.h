@@ -3,17 +3,17 @@
 
 #include"ListaSimple.h"
 
-template <typename T, int dim = 5>
+template <typename T>
 class HashDC{
 
     public:
-    HashDC();
+    HashDC(int d = 8);
 
     ~HashDC();
 
     HashDC(const HashDC &b);
 
-    HashDC & operator=(const HashDC &b);
+    HashDC & operator=(const HashDC &th);
 
     void Agregar(T valor);
 
@@ -31,12 +31,12 @@ class HashDC{
 
         struct Tabla {
 
-            int cont, ocupados;
+            int cont = 0, ocupados = 0;
 
             ListaSimple<T>** celdas =  new ListaSimple<T>*[cont];
 
             // Constructor de Tabla
-            Tabla(int c) :cont(dim)
+            Tabla(int c)
             {
                 cont = c;
                 for (int i = 0; i <= cont; i++)
@@ -45,28 +45,53 @@ class HashDC{
 
             // Destructor de Tabla
             ~Tabla () {
-                for (int i = 0; i <= cont; ++i)
-                    if (celdas[i] != nullptr) delete celdas[i];
-
+//                for (int i = 0; i < cont; ++i)
+//                    if (celdas[i] != NULL){
+//                        ListaSimple<T> *temp = celdas[i];
+//                        celdas[i] = NULL;
+//                        delete temp;
+//                    }
+                ocupados = 0;
                 delete[] celdas;
             }
 
 
-            float CalcularFactorCarga(){
-                float fact;
-                fact = ocupados/cont;
+            double CalcularFactorCarga(){
+                double fact;
+                fact = double(ocupados)/cont;
                 return fact;
             }
+
+            void Agregar(int idx, T val){
+                if (celdas[idx]==NULL)
+                {
+                    celdas[idx] = new ListaSimple<T>;
+                    ocupados++;
+                }
+             celdas[idx]->AgregarUltimo(val);
+           }
+
+           void Imprimir()const{
+               for (int i=0; i<cont; i++)
+                {
+                    std::cout<<"Lista "<<i+1<<":"<<std::endl;
+                    if (celdas[i]!=NULL) celdas[i]->Imprimir();
+                        else std::cout<<"Vacia"<<std::endl;
+                }
+           }
+
         };
 
 
-        int elementos;
+        int numElem, dim;
 
         Tabla *hashT;
 
         int Hash(T val)const;
 
         void Rehash();
+
+        void CopiarVal(const Tabla *tb);
 
 };
 

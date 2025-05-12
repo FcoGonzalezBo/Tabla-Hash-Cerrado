@@ -23,3 +23,22 @@
 1740417067 c:\users\vrapt\documents\2025-1\ed1\hashdircerrado\listasimple.tpp
 	<iostream>
 
+1747007058 source:c:\users\vrapt\proyectos\tabla-hash-cerrado\main.cpp
+	<iostream>
+	"HashDC.h"
+
+1747009229 c:\users\vrapt\proyectos\tabla-hash-cerrado\hashdc.h
+	"ListaSimple.h"
+	"HashDC.tpp"
+
+1746804988 c:\users\vrapt\proyectos\tabla-hash-cerrado\listasimple.h
+	"ListaSimple.tpp"
+
+1747008702 c:\users\vrapt\proyectos\tabla-hash-cerrado\listasimple.tpp
+	<iostream>
+
+1747008425 c:\users\vrapt\proyectos\tabla-hash-cerrado\hashdc.tpp
+	<iostream>
+	<cmath>
+	"ListaSimple.h"
+
