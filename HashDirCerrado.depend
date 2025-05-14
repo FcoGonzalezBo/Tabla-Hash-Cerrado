@@ -42,3 +42,22 @@
 	<cmath>
 	"ListaSimple.h"
 
+1747206231 source:c:\users\alber\desktop\proyectos de programacion\estructuras de datos\tabla-hash-cerrado\main.cpp
+	<iostream>
+	"HashDC.h"
+
+1747206402 c:\users\alber\desktop\proyectos de programacion\estructuras de datos\tabla-hash-cerrado\hashdc.h
+	"ListaSimple.h"
+	"HashDC.tpp"
+
+1747122640 c:\users\alber\desktop\proyectos de programacion\estructuras de datos\tabla-hash-cerrado\listasimple.h
+	"ListaSimple.tpp"
+
+1747206702 c:\users\alber\desktop\proyectos de programacion\estructuras de datos\tabla-hash-cerrado\listasimple.tpp
+	<iostream>
+
+1747206340 c:\users\alber\desktop\proyectos de programacion\estructuras de datos\tabla-hash-cerrado\hashdc.tpp
+	<iostream>
+	<cmath>
+	"ListaSimple.h"
+

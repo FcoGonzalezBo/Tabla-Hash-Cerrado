@@ -76,9 +76,10 @@ void ListaSimple<Tipo>::EliminarPrimero()
 {
     if(EstaVacia())throw "Lista vac\241a";
     Elemento *temp = primero;
-    primero = primero ->sig;
+    primero = primero -> sig;
     delete temp;
     --numElem;
+    //std::cout << "El Chavo\n"; // < ---------------------------------------------------------------------
 }
 //*****************************************************************
 template <typename Tipo>
@@ -97,28 +98,29 @@ void ListaSimple<Tipo>::EliminarUltimo()
 template <typename Tipo>
 void ListaSimple<Tipo>::EliminarEnPos(int pos)
 {
-    if (pos < 0 || pos >= numElem)throw "Posici\242n fuera de rango";
-    if (pos==0)EliminarPrimero();
-    if (pos==numElem-1)EliminarUltimo();
-    else{
+    if (pos < 0 || pos >= numElem) throw "Posici\242n fuera de rango";
+    else if (pos == 0) EliminarPrimero();
+    else if (pos == numElem-1) EliminarUltimo();
+    else {
         Elemento *anterior = primero;
-    Elemento *porBorrar = anterior->sig;
+        Elemento *porBorrar = anterior->sig;
 
-    for (int i = 0; i < pos-1; ++i){
-        anterior = porBorrar;
-        porBorrar = anterior->sig;
-    }
-    anterior->sig = porBorrar->sig;
-    delete porBorrar;
+        for (int i = 0; i < pos-1; ++i){
+            anterior = porBorrar;
+            porBorrar = anterior->sig;
+        }
+        anterior->sig = porBorrar->sig;
+        delete porBorrar;
     }
     --numElem;
+
 }
 //*****************************************************************
 template <typename Tipo>
 void ListaSimple<Tipo>::EliminarValor(Tipo v)
 {
-    int c =ObtenerPosDe(v);
-    if (c!=-1)EliminarEnPos(c);
+    int c = ObtenerPosDe(v);
+    if (c!=-1) EliminarEnPos(c);
     else throw "Valor no encontrado";
 }
 //*****************************************************************
@@ -173,12 +175,7 @@ void ListaSimple<Tipo>::Imprimir() const
 template <typename Tipo>
 bool ListaSimple<Tipo>::Buscar (Tipo v) const
 {
-//    Elemento *visitado = primero;
-//    while (visitado != NULL && visitado -> valor != v){
-//        visitado = visitado ->sig;
-//    }
-//    return visitado != NULL;
-    return (ObtenerPosDe(v)!=-1);
+    return (ObtenerPosDe(v) != -1);
 }
 //*****************************************************************
 template <typename Tipo>
@@ -198,9 +195,10 @@ int ListaSimple<Tipo>::ObtenerPosDe(Tipo v) const
     int pos = 0;
     Elemento *visitado = primero;
     while (visitado != NULL && visitado -> valor != v){
-        visitado = visitado ->sig;
-        ++ pos;
+        visitado = visitado -> sig;
+        ++pos;
     }
+
     if (visitado == NULL) return -1;
     else return pos;
 }
